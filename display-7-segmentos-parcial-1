@@ -1,0 +1,337 @@
+const int a = 2;
+const int b = 3;
+const int c = 4;
+const int d = 5;
+const int e = 6;
+const int f = 7;
+const int g = 8;
+
+// Declarar los pines donde van conectados los 2 botones.
+const int desc = 12;
+const int asc = 13;
+
+const int retardo = 1000; // delay en ms (1000ms = 1seg)
+
+int contador = 0;
+
+void setup(){
+
+    // Declarar cada uno de los LEDS/segmentos como salida.
+    pinMode(a, OUTPUT);
+    pinMode(b, OUTPUT);
+    pinMode(c, OUTPUT);
+    pinMode(d, OUTPUT);
+    pinMode(e, OUTPUT);
+    pinMode(f, OUTPUT);
+    pinMode(g, OUTPUT);
+
+    pinMode(desc, INPUT);
+    pinMode(asc, INPUT);
+
+    Serial.begin(9600);
+  	Serial.print("Ingrese un numero (0-15): ");
+}
+
+void loop(){
+
+    int leer = digitalRead(asc);
+    int leer2 = digitalRead(desc);
+    // Serial.println(leer);
+
+    if (leer == 1){
+
+        // Simple rutina que hará un contador que vaya del 0 al 9 y vuelva a empezar.
+
+        // Ir encendiendo y apagando los segmentos correspondientes para ir formando los números.
+
+        // número cero
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW); // se apaga el del centro
+        delay(retardo);       // medio segundo de retraso para el siguiente número | para que se noten los cambios de un número a otro.
+
+        // numero uno
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        delay(retardo);
+
+        // numero dos
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero tres
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero cuatro
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero cinco
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero seis
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero siete
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        delay(retardo);
+
+        // numero ocho
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero nueve
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // número cero
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW);
+        delay(retardo);
+    }
+
+    if (leer2 == 1){
+
+        // numero nueve
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero ocho
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero siete
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        delay(retardo);
+
+        // numero seis
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero cinco
+        digitalWrite(a, HIGH);
+        digitalWrite(b, LOW);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero cuatro
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero tres
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero dos
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, LOW);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, LOW);
+        digitalWrite(g, HIGH);
+        delay(retardo);
+
+        // numero uno
+        digitalWrite(a, LOW);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, LOW);
+        digitalWrite(e, LOW);
+        digitalWrite(f, LOW);
+        digitalWrite(g, LOW);
+        delay(retardo);
+
+        // número cero
+        digitalWrite(a, HIGH);
+        digitalWrite(b, HIGH);
+        digitalWrite(c, HIGH);
+        digitalWrite(d, HIGH);
+        digitalWrite(e, HIGH);
+        digitalWrite(f, HIGH);
+        digitalWrite(g, LOW);
+        delay(retardo);
+    }
+  
+  	if (Serial.available()) {
+    	int input = Serial.parseInt();
+    	if (input >= 0 && input <= 15) {
+      		contador = input;
+      		Serial.println(input);
+    	}
+	}
+  dibuja();
+}
+
+//Monitor Serial - Parcial 1
+
+void display(int a, int b, int c, int d, int e, int f, int g){
+  digitalWrite(2, a);   
+  digitalWrite(3, b);   
+  digitalWrite(4, c);
+  digitalWrite(5, d);
+  digitalWrite(6, e);
+  digitalWrite(7, f);
+  digitalWrite(8, g);
+}
+
+void dibuja() {
+  switch (contador) {
+    case 0:
+      display(1, 1, 1, 1, 1, 1, 0);
+      break;
+    case 1:
+      display(0, 1, 1, 0, 0, 0, 0);
+      break;
+    case 2:
+      display(1, 1, 0, 1, 1, 0, 1);
+      break;
+    case 3:
+      display(1, 1, 1, 1, 0, 0, 1);
+      break;
+    case 4:
+      display(0, 1, 1, 0, 0, 1, 1);
+      break;
+    case 5:
+      display(1, 0, 1, 1, 0, 1, 1);
+      break;
+    case 6:
+      display(1, 0, 1, 1, 1, 1, 1);
+      break;
+    case 7:
+      display(1, 1, 1, 0, 0, 0, 0);
+      break;
+    case 8:
+      display(1, 1, 1, 1, 1, 1, 1);
+      break;
+    case 9:
+      display(1, 1, 1, 0, 0, 1, 1);
+      break;
+    case 10:
+      display(1, 1, 1, 0, 1, 1, 1);
+      break;
+    case 11:
+      display(1, 1, 1, 1, 1, 1, 1);
+      break;
+    case 12:
+      display(1, 0, 0, 1, 1, 1, 0);
+      break;
+    case 13:
+      display(1, 1, 1, 1, 1, 1, 0);
+      break;
+    case 14:
+       display(1, 0, 0, 1, 1, 1, 1);
+      break;
+    case 15:
+      display(1, 0, 0, 0, 1, 1, 1);
+      break;
+    default:
+      display(0, 0, 0, 0, 0, 0, 0);  
+      break;
+  }
+}
